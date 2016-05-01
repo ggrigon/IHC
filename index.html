@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Portal</title>
+
+    <link rel="stylesheet" type="text/css" href="plugins/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="plugins/font-awesome/css/font-awesome.css">
+
+    <script type="text/javascript" src="plugins/js/jquery.js"></script>
+    <script type="text/javascript" src="plugins/js/bootstrap.js"></script>
+
+    <script src="plugins/calendar-master/zabuto_calendar.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="plugins/calendar-master/zabuto_calendar.min.css">
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="row menu">
+        <div class="col-md-12">
+
+          <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Home</a>
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav navbar-left">
+                  <li><a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">Perfil</a></li>
+                  <li><a href="#about">Matérias</a></li>
+                  <li><a href="#about">Financeiro</a></li>
+                  <li><a href="#about">Biblioteca Virtual</a></li>
+              </ul>
+
+              <ul class="nav navbar-nav navbar-right">
+                <form class="navbar-form navbar-left" role="search">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Insira sua pesquisa">
+                  </div>
+                  <button type="submit" class="btn btn-default">Pesquisar</button>
+                </form>
+              </ul>
+
+            </div>
+          </nav>
+
+          <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="myModalLabel">Perfil do usuario</h4>
+                </div>
+                <div class="modal-body">
+
+                  <div class="row">
+                    <div class="col-md-5">
+                      <img src="imagens/fotoPerfil.png" class="img-rounded" alt="Cinque Terre" width="304" height="236">
+                      <label for="">Matrícula: 124249</label>
+                    </div>
+
+                    <div class="col-md-7">
+                      <h4><label>Nome: </label>  Aluno Teste</h4><br>
+                      <label>Curso: </label>  Sistemas de Informação
+                      <label>Semestre: </label>  3
+                      <br>
+                      <label>Email: </label>  teste@bol.com
+                      <label>Telfone: </label>  190
+                    </div>
+                  </div>
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                  <button type="button" class="btn btn-primary">Editar  </button>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row banners">
+
+          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+
+
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <img src="imagens/1.jpg" alt="...">
+                <div class="carousel-caption">
+                  ...
+                </div>
+              </div>
+              <div class="item">
+                <img src="imagens/2.jpg" alt="...">
+                <div class="carousel-caption">
+                  ...
+                </div>
+              </div>
+              <div class="item">
+                <img src="imagens/3.jpg" alt="...">
+                <div class="carousel-caption">
+                  ...
+                </div>
+              </div>
+              ...
+            </div>
+
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev"></a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next"></a>
+          </div>
+
+          <br><br>
+
+          <div class="row conteudo">
+            <div class="col-md-4 ">
+              <h4 style="text-align: center;">Ultimas Notas Postadas</h4>
+
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Matéria</th>
+                    <th>Professor</th>
+                    <th>Nota</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>IHC</td>
+                    <td>Cristiane</td>
+                    <td>10</td>
+                  </tr>
+                  <tr>
+                    <td>Linguagem I</td>
+                    <td>Roque</td>
+                    <td>10</td>
+                  </tr>
+                  <tr>
+                    <td>Banco de Dados</td>
+                    <td>FUMANTE</td>
+                    <td>0</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <label>Atualizado em 30/04/16</label>
+
+            </div>
+
+            <div class="col-md-4">
+              <h4 style="text-align: center;">Avisos do Curso</h4>
+
+              <ul>
+                <li>Aviso 1</li>
+                <li>Aviso 2</li>
+                <li>Aviso 3</li>
+              </ul>
+
+            </div>
+
+            <div class="col-md-4">
+              <h4 style="text-align: center;">Calendario Academico</h4>
+
+              <div id="my-calendar"></div>
+
+              <script type="application/javascript">
+                  $(document).ready(function () {
+                      $("#my-calendar").zabuto_calendar();
+                  });
+              </script>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>
