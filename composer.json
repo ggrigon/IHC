@@ -1,0 +1,14 @@
+{
+  "autoload": {
+    "psr-0": {"src\\": "/",
+              "App\\": "/"}
+  },
+
+  "name": "CHC",
+  "description": "Controle de Horas Complementares",
+  "authors": [
+    {
+      "name": "LorenzoWF"
+    }
+  ]
+}
