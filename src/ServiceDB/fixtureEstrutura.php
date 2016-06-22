@@ -14,7 +14,7 @@ $conn->query("DROP TABLE professor;");
 $conn->query("DROP TABLE secretaria;");
 $conn->query("DROP TABLE aluno;");
 
-$conn->query("CREATE TABLE IF NOT EXISTS aluno (
+$conn->query("CREATE TABLE aluno (
               	cod_aluno serial,
               	nr_matricula INT NOT NULL UNIQUE,
               	cpf VARCHAR(12) NOT NULL UNIQUE,
@@ -23,7 +23,7 @@ $conn->query("CREATE TABLE IF NOT EXISTS aluno (
               	PRIMARY KEY (cod_aluno)
               );");
 
-$conn->query("CREATE TABLE IF NOT EXISTS usuario (
+$conn->query("CREATE TABLE usuario (
               	cod_usuario serial,
               	cpf VARCHAR(12) NOT NULL UNIQUE,
               	nome VARCHAR(30) NOT NULL,
@@ -31,7 +31,7 @@ $conn->query("CREATE TABLE IF NOT EXISTS usuario (
               	PRIMARY KEY (cod_usuario)
               );");
 
-$conn->query("CREATE TABLE IF NOT EXISTS professor (
+$conn->query("CREATE TABLE professor (
               	cod_professor serial,
               	cpf VARCHAR(12) NOT NULL UNIQUE,
               	nome VARCHAR(30) NOT NULL,
@@ -39,7 +39,7 @@ $conn->query("CREATE TABLE IF NOT EXISTS professor (
               	PRIMARY KEY (cod_professor)
               );");
 
-$conn->query("CREATE TABLE IF NOT EXISTS certificado (
+$conn->query("CREATE TABLE certificado (
               	cod_certificado serial,
               	inst_emissora VARCHAR(11) NOT NULL,
               	descricao VARCHAR(30),
@@ -48,7 +48,7 @@ $conn->query("CREATE TABLE IF NOT EXISTS certificado (
               	PRIMARY KEY (cod_certificado)
               );");
 
-$conn->query("CREATE TABLE IF NOT EXISTS entrega (
+$conn->query("CREATE TABLE entrega (
               	cod_entrega serial,
               	cod_aluno int NOT NULL,
               	cod_usuario int NOT NULL,
@@ -60,7 +60,7 @@ $conn->query("CREATE TABLE IF NOT EXISTS entrega (
               	FOREIGN KEY (cod_certificado) REFERENCES certificado (cod_certificado)
               );");
 
-$conn->query("CREATE TABLE IF NOT EXISTS evento (
+$conn->query("CREATE TABLE evento (
               	cod_evento serial,
               	cod_certificado int,
               	desc_evento VARCHAR(15) NOT NULL,
@@ -73,7 +73,7 @@ $conn->query("CREATE TABLE IF NOT EXISTS evento (
               	FOREIGN KEY (cod_certificado) REFERENCES certificado (cod_certificado)
               );");
 
-$conn->query("CREATE TABLE IF NOT EXISTS evento_aluno (
+$conn->query("CREATE TABLE evento_aluno (
               	cod_evento int NOT NULL,
               	cod_aluno int NOT NULL,
               	PRIMARY KEY (cod_evento, cod_aluno),
@@ -81,7 +81,7 @@ $conn->query("CREATE TABLE IF NOT EXISTS evento_aluno (
               	FOREIGN KEY (cod_aluno) REFERENCES aluno (cod_aluno)
               );");
 
-$conn->query("CREATE TABLE IF NOT EXISTS evento_professor (
+$conn->query("CREATE TABLE evento_professor (
               	cod_evento int NOT NULL,
               	cod_professor int NOT NULL,
               	PRIMARY KEY (cod_evento, cod_professor),
