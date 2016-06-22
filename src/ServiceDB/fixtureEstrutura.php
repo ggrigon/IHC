@@ -23,12 +23,12 @@ $conn->query("CREATE TABLE IF NOT EXISTS aluno (
               	PRIMARY KEY (cod_aluno)
               );");
 
-$conn->query("CREATE TABLE IF NOT EXISTS secretaria (
-              	cod_secretaria serial,
+$conn->query("CREATE TABLE IF NOT EXISTS usuario (
+              	cod_usuario serial,
               	cpf VARCHAR(12) NOT NULL UNIQUE,
               	nome VARCHAR(30) NOT NULL,
               	telefone VARCHAR(13),
-              	PRIMARY KEY (cod_secretaria)
+              	PRIMARY KEY (cod_usuario)
               );");
 
 $conn->query("CREATE TABLE IF NOT EXISTS professor (
@@ -51,12 +51,12 @@ $conn->query("CREATE TABLE IF NOT EXISTS certificado (
 $conn->query("CREATE TABLE IF NOT EXISTS entrega (
               	cod_entrega serial,
               	cod_aluno int NOT NULL,
-              	cod_secretaria int NOT NULL,
+              	cod_usuario int NOT NULL,
               	cod_certificado int NOT NULL,
               	data_entrega_cert VARCHAR(10),
               	PRIMARY KEY (cod_entrega),
               	FOREIGN KEY (cod_aluno) REFERENCES aluno (cod_aluno),
-              	FOREIGN KEY (cod_secretaria) REFERENCES secretaria (cod_secretaria),
+              	FOREIGN KEY (cod_usuario) REFERENCES usuario (cod_usuario),
               	FOREIGN KEY (cod_certificado) REFERENCES certificado (cod_certificado)
               );");
 

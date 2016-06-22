@@ -7,7 +7,7 @@ $conn = $conexao->getConn();
 
 
 $conn->query("INSERT INTO aluno (nr_matricula, cpf, nome, telefone) VALUES (32944, '035872300050', 'Lorenzo Freitas', '81675672');");
-$conn->query("INSERT INTO secretaria (cpf, nome, telefone) VALUES ('035872300050', 'Bruna Silva', '81675672');");
+$conn->query("INSERT INTO usuario (cpf, nome, telefone) VALUES ('035872300050', 'Bruna Silva', '81675672');");
 $conn->query("INSERT INTO professor (cpf, nome, telefone) VALUES ('035872300050', 'Gnomo', '81675672');");
 $conn->query("INSERT INTO certificado (inst_emissora, descricao, qtd_horas, data_emissao) VALUES ('Fisl15', 'evento qualquer', 20, '17062016');");
 $conn->query("INSERT INTO entrega (cod_aluno, cod_secretaria, cod_certificado, data_entrega_cert) VALUES (1, 1, 1, '17062016');");
