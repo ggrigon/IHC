@@ -87,12 +87,15 @@
         console.log(data);
       });
 
-      //CANCELA CERTIFIADO
+      
 
-       $scope.cancelaCert = function() {
-          $('#certId').val("");
-          $('#certId').attr("");
-       };
+    }
+
+    //CANCELA CERTIFIADO
+    $scope.cancelaCert = function() {
+        $('#certId').val("");
+        $('#certId').attr("");
+    };
 
 
   }]);
