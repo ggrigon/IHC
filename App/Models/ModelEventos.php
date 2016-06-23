@@ -28,7 +28,7 @@ class ModelEventos
     {
         try{
 
-            if (isset($o->cod_certificado)){
+            if (!empty($o->cod_certificado)){
               $stmt = $this->conn->prepare("INSERT INTO evento (cod_certificado, desc_evento, data_ini, data_fim, valor, cidade, desc_local) VALUES (:cod_certificado, :desc_evento, :data_ini, :data_fim, :valor, :cidade, :desc_local);");
               $stmt->bindValue(":cod_certificado", $o->cod_certificado);
 
