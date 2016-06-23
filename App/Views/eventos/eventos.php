@@ -92,8 +92,8 @@
 
     //CANCELA CERTIFIADO
     $scope.cancelaCert = function() {
-        $('#certId').val("");
-        $('#certId').attr('teste', "");
+          $('#certId').val(null);
+          $('#certId').attr('teste', null);
     };
 
 
@@ -131,7 +131,7 @@
                       <div class="input-group-addon"><a class="fa fa-search" aria-hidden="true" data-toggle="modal" data-target="#certificadosModal"></a></div>
                       <input type="text" id="certId" teste="" name="cod_certificado" ng-model="cod_certificado" class="form-control" disabled>
                       <div class="input-group-addon"><a class="fa fa-times" aria-hidden="true" ng-click="cancelaCert()"></a></div>
-                    </div>                    
+                    </div>
                   </div>
 
                   <div class="col-md-8">
