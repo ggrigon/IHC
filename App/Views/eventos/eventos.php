@@ -85,7 +85,7 @@
       $http.post('/setEvento', dataForm).success(function(data){
         alert("Evento cadastrado com sucesso!");
         console.log(data);
-        location.reload();
+        //location.reload();
       });
 
     }
