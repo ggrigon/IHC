@@ -89,13 +89,11 @@
 
     }
 
-    /*}
-
     //CANCELA CERTIFIADO
     $scope.cancelaCert = function() {
         $('#certId').val("");
         $('#certId').attr("");
-    };*/
+    };
 
 
   }]);
