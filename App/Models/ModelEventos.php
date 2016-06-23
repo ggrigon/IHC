@@ -28,8 +28,13 @@ class ModelEventos
     {
         try{
 
-            $stmt = $this->conn->prepare("INSERT INTO evento (cod_certificado, desc_evento, data_ini, data_fim, valor, cidade, desc_local) VALUES (:cod_certificado, :desc_evento, :data_ini, :data_fim, :valor, :cidade, :desc_local);");
-            $stmt->bindValue(":cod_certificado", $o->cod_certificado);
+            if (isset($o->cod_certificado)){
+              $stmt = $this->conn->prepare("INSERT INTO evento (cod_certificado, desc_evento, data_ini, data_fim, valor, cidade, desc_local) VALUES (:cod_certificado, :desc_evento, :data_ini, :data_fim, :valor, :cidade, :desc_local);");
+              $stmt->bindValue(":cod_certificado", $o->cod_certificado);
+            } else {
+              $stmt = $this->conn->prepare("INSERT INTO evento (desc_evento, data_ini, data_fim, valor, cidade, desc_local) VALUES (:desc_evento, :data_ini, :data_fim, :valor, :cidade, :desc_local);");
+            }
+
             $stmt->bindValue(":desc_evento", $o->desc_evento);
             $stmt->bindValue(":data_ini", $o->data_ini);
             $stmt->bindValue(":data_fim", $o->data_fim);
