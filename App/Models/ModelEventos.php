@@ -31,13 +31,15 @@ class ModelEventos
             if (empty($o->cod_certificado)){
               $stmt = $this->conn->prepare("INSERT INTO evento (desc_evento, data_ini, data_fim, valor, cidade, desc_local) VALUES (:desc_evento, :data_ini, :data_fim, :valor, :cidade, :desc_local);");
 
-              echo "\nCadastro nao possui certificado!";
+              echo "Cadastro nao possui certificado!\n";
             } else {
               $stmt = $this->conn->prepare("INSERT INTO evento (cod_certificado, desc_evento, data_ini, data_fim, valor, cidade, desc_local) VALUES (:cod_certificado, :desc_evento, :data_ini, :data_fim, :valor, :cidade, :desc_local);");
               $stmt->bindValue(":cod_certificado", $o->cod_certificado);
 
-              echo "\nCadastro possui certificado!";
+              echo "Cadastro possui certificado!\n";
             }
+
+            echo "Certificado = ".$o->cod_certificado."\n";
 
             $stmt->bindValue(":desc_evento", $o->desc_evento);
             $stmt->bindValue(":data_ini", $o->data_ini);
