@@ -87,7 +87,13 @@
         console.log(data);
       });
 
-     };
+      //CANCELA CERTIFIADO
+
+       $scope.cancelaCert = function() {
+          $('#certId').val("");
+          $('#certId').attr("");
+       };
+
 
   }]);
 </script>
@@ -122,7 +128,7 @@
                     <div class="input-group">
                       <div class="input-group-addon"><a class="fa fa-search" aria-hidden="true" data-toggle="modal" data-target="#certificadosModal"></a></div>
                       <input type="text" id="certId" teste="" name="cod_certificado" ng-model="cod_certificado" class="form-control" disabled>
-                      <div class="input-group-addon"><a class="fa fa-ban" aria-hidden="true"></a></div>
+                      <div class="input-group-addon"><a class="fa fa-ban" aria-hidden="true" ng-click="cancelaCert()"></a></div>
                     </div>                    
                   </div>
 
